@@ -1,10 +1,23 @@
 const button = document.querySelector(".button");
-const names = ["Ewa", "Lena", "Asia", "Helenka", "Grzes", "Tomek", "Szymon"];
-const result = document.querySelector(".result");
+const input = document.querySelector(".input");
+let result = document.querySelector(".result");
+let names = [];
 
-const showChildName = () => {
-    const index = Math.floor(Math.random() * names.length);
-    result.textContent = `Najfajniejsze imię to: ${names[index]}`;
+const addName = (e) => {
+    e.preventDefault();
+    let name = input.value;
+
+    if (name === "") {
+        return;
+    } else {
+        for (i of names) {
+            if (name === i) {
+                return;
+            }
+        }
+        names.push(name);
+        result.textContent += `${name}, `;
+    }
 }
 
-button.addEventListener('click', showChildName);
+button.addEventListener('click', addName);

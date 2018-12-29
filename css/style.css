@@ -5,19 +5,22 @@
 body {
   height: 100vh; }
 
+input {
+  padding: 10px 30px;
+  margin: 0 10px; }
+
 .button {
   margin: 50px auto 50px;
-  display: block;
   padding: 10px 30px;
   font-size: 20px;
   font-weight: bold;
-  border: 3px solid blue;
+  border: 2px solid blue;
   cursor: pointer; }
 
 .result {
   display: block;
-  margin: 20px auto 50px;
-  text-align: center;
+  margin: 20px auto 50px 10px;
+  text-align: left;
   font-size: 25px;
   font-weight: bold; }
 

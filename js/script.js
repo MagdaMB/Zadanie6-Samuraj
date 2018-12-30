@@ -1,10 +1,36 @@
-const button = document.querySelector(".button");
-const names = ["Ewa", "Lena", "Asia", "Helenka", "Grzes", "Tomek", "Szymon"];
+const addBtn = document.querySelector(".addBtn");
+const deleteBtn = document.querySelector(".deleteBtn");
+const showBtn = document.querySelector(".showBtn");
+const showAll = document.querySelector(".showAll");
 const result = document.querySelector(".result");
+const input = document.querySelector(".input");
 
-const showChildName = () => {
-    const index = Math.floor(Math.random() * names.length);
-    result.textContent = `Najfajniejsze imię to: ${names[index]}`;
+let solutions = ["walcz", "przemyśl to jeszcze raz"];
+
+const addFunction = (e) => {
+    e.preventDefault();
+    solutions.push(input.value);
+    input.value = "";
+    console.log(solutions);
 }
 
-button.addEventListener('click', showChildName);
+const delFunction = (e) => {
+    e.preventDefault();
+    solutions = [];
+    console.log(solutions);
+    alert("nie masz żadnych możliwości");
+}
+
+const showFunction = () => {
+    let index = Math.floor(Math.random() * solutions.length);
+    alert(solutions[index]);
+}
+
+const showAllFunction = () => {
+    alert(solutions);
+}
+
+addBtn.addEventListener('click', addFunction);
+deleteBtn.addEventListener('click', delFunction);
+showBtn.addEventListener('click', showFunction);
+showAll.addEventListener('click', showAllFunction);
